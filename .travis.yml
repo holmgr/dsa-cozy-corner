@@ -9,5 +9,5 @@ script:
   - mkdir build
   - cd build
   - cmake .. && make
-  - make gtest
+  - ./dsa_test
 
