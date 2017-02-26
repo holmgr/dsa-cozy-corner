@@ -3,7 +3,7 @@
 
 A collection of implementations of prominent algorithms and data strucutres by U-students @ LiU
 
-Read the [Contribution Guidelines](CONTRIBUTE.md) before coding to ensure that your implementation will be accepted.
+Read the [Contribution Guidelines](CONTRIBUTING.md) before coding to ensure that your implementation will be accepted.
 
 ## Getting started
 
