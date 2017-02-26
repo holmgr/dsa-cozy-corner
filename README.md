@@ -1,4 +1,6 @@
 # dsa-cozy-corner
+[![Build Status](https://travis-ci.org/holmgr/dsa-cozy-corner.svg?branch=master)](https://travis-ci.org/holmgr/dsa-cozy-corner)
+
 A collection of implementations of prominent algorithms and data strucutres by U-students @ LiU
 
 Read the [Contribution Guidelines](CONTRIBUTE.md) before coding to ensure that your implementation will be accepted.
