@@ -19,8 +19,8 @@ TEST(InsertionSortTest, Positive) {
   std::vector<int> vec_sorted = {3, 4, 15, 17, 18};
 
   insertion_sort(vec);
-  for(int i = 0; i < vec.size(); i++) {
-      EXPECT_EQ(vec_sorted[i], vec[i]);
+  for (int i = 0; i < vec.size(); i++) {
+    EXPECT_EQ(vec_sorted[i], vec[i]);
   }
 }
 
@@ -30,7 +30,7 @@ TEST(InsertionSortTest, Mixed) {
   std::vector<int> vec_sorted = {-17, -3, 4, 15, 18};
 
   insertion_sort(vec);
-  for(int i = 0; i < vec.size(); i++) {
-      EXPECT_EQ(vec_sorted[i], vec[i]);
+  for (int i = 0; i < vec.size(); i++) {
+    EXPECT_EQ(vec_sorted[i], vec[i]);
   }
 }
