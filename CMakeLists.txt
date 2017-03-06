@@ -7,9 +7,10 @@ set(PROJECT_NAME_STR dsa)
 #  Google Test Target
 #====================================================================
 
-cmake_minimum_required(VERSION 3.1.0)
+cmake_minimum_required(VERSION 2.8.8)
 project(${PROJECT_NAME_STR} C CXX)
-set (CMAKE_CXX_STANDARD 11)
+
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 find_package(Threads REQUIRED)
 
