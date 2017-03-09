@@ -1,5 +1,5 @@
 #include "searching.h"
-#include <math.h>
+#include <cmath>
 #include <vector>
 
 /*
