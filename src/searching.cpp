@@ -10,7 +10,7 @@ int binary_search(std::vector<int> &vec, int target) {
   int lower = 0;
   int upper = vec.size() - 1;
 
-  // Cannot contain target, empty
+  // As long as there exists a subarray, continue search
   while (lower <= upper) {
     int middle = std::floor((lower + upper) / 2);
 
