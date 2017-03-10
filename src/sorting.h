@@ -3,5 +3,6 @@
 #include <vector>
 
 void insertion_sort(std::vector<int> &vec);
+void merge_sort(std::vector<int> &vec);
 
 #endif /* ifndef SORTING_H */
