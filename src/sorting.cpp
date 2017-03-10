@@ -1,8 +1,5 @@
 #include "sorting.h"
 #include <algorithm>
-#include <cmath>
-#include <iostream>
-#include <limits>
 #include <vector>
 
 // Sorts the given sequence using in-place insertion sort
