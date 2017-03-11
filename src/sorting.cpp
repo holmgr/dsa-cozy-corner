@@ -55,6 +55,7 @@ int partition(std::vector<int> &vec, int lo, int hi) {
     vec[i] = vec[j];
     vec[j] = tmp;
   }
+}
 
 /**
   * Merges the left and right sublists into vec in order
