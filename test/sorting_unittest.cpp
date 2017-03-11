@@ -1,5 +1,6 @@
 #include "sorting.h"
 #include <limits.h>
+#include <algorithm>
 #include <vector>
 #include "gtest/gtest.h"
 
@@ -67,7 +68,6 @@ TEST(MergeSortTest, Mixed) {
   }
 }
 
-
 // Tests quick_sort()
 
 // Tests empty input.
@@ -97,5 +97,27 @@ TEST(QuickSortTest, Mixed) {
   quick_sort(vec, 0, vec.size());
   for (int i = 0; i < vec.size(); i++) {
     EXPECT_EQ(vec_sorted[i], vec[i]);
+  }
+}
+
+// Tests counting_sort()
+
+// Tests empty input.
+TEST(CountingSortTest, Empty) {
+  std::vector<int> empty_vec;
+
+  int range = 0;
+  EXPECT_TRUE(counting_sort(empty_vec, range).empty());
+}
+
+// Tests non empty positive input.
+TEST(CountingSortTest, Positive) {
+  std::vector<int> vec = {3, 4, 17, 18, 15};
+  std::vector<int> vec_sorted = {3, 4, 15, 17, 18};
+
+  int range = *std::max_element(vec.begin(), vec.end());
+  std::vector<int> sorted = counting_sort(vec, range);
+  for (int i = 0; i < sorted.size(); i++) {
+    EXPECT_EQ(vec_sorted[i], sorted[i]);
   }
 }
