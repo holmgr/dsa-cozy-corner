@@ -35,6 +35,39 @@ TEST(InsertionSortTest, Mixed) {
   }
 }
 
+// Tests merge_sort()
+
+// Tests empty input.
+TEST(MergeSortTest, Empty) {
+  std::vector<int> empty_vec;
+
+  merge_sort(empty_vec);
+  EXPECT_TRUE(empty_vec.empty());
+}
+
+// Tests non empty positive input.
+TEST(MergeSortTest, Positive) {
+  std::vector<int> vec = {3, 4, 17, 18, 15};
+  std::vector<int> vec_sorted = {3, 4, 15, 17, 18};
+
+  merge_sort(vec);
+  for (int i = 0; i < vec.size(); i++) {
+    EXPECT_EQ(vec_sorted[i], vec[i]);
+  }
+}
+
+// Tests mixed input.
+TEST(MergeSortTest, Mixed) {
+  std::vector<int> vec = {-3, 4, -17, 18, 15};
+  std::vector<int> vec_sorted = {-17, -3, 4, 15, 18};
+
+  merge_sort(vec);
+  for (int i = 0; i < vec.size(); i++) {
+    EXPECT_EQ(vec_sorted[i], vec[i]);
+  }
+}
+
+
 // Tests quick_sort()
 
 // Tests empty input.
