@@ -1,5 +1,6 @@
 #include "sorting.h"
 #include <algorithm>
+#include <iostream>
 #include <vector>
 
 // Sorts the given sequence using in-place insertion sort
@@ -19,7 +20,7 @@ void insertion_sort(std::vector<int>& vec) {
 
 // Sorts the given input using in-place quick sort.
 // Should be called as quick_sort(A, 0, A.size())
-void quick_sort(std::vector<int> &vec, int lo, int hi) {
+void quick_sort(std::vector<int>& vec, int lo, int hi) {
   if (lo < hi) {
     // Partition the input between lo and hi
     int p = partition(vec, lo, hi);
@@ -31,7 +32,7 @@ void quick_sort(std::vector<int> &vec, int lo, int hi) {
 
 // Helper function for quick_sort.
 // Partitions the input between lo and hi, using lo as pivot
-int partition(std::vector<int> &vec, int lo, int hi) {
+int partition(std::vector<int>& vec, int lo, int hi) {
   // We pick the value at lo as pivot
   int pivot = vec[lo];
   // Create two search-heads
@@ -98,4 +99,37 @@ void merge_sort(std::vector<int>& vec) {
 
   // Merge the results
   merge(vec, left, right);
+}
+
+/**
+ * Sorts the given sequence using counting sort.
+ * Will sort the given sequence in linear time however all elements must be
+ * within the range 0-k inclusive.
+ * Time-complexity:    O(n)
+ * Space-complexity:   O(k)
+ **/
+std::vector<int> counting_sort(std::vector<int>& vec, int k) {
+  std::vector<int> count(k + 1);
+  std::vector<int> result(vec.size());
+
+  // Set count[i] to contain the number of elements of i
+  for (int i = 0; i < vec.size(); ++i) {
+    count[vec[i]] += 1;
+  }
+
+  // Set count[i] to contain the number of elements smaller than i
+  int total = 0;
+  for (int i = 0; i <= k; ++i) {
+    int old_count = count[i];
+    count[i] = total;
+    total += old_count;
+  }
+
+  // Copy values to result, preserving order of inputs with equal values
+  for (int i = 0; i < vec.size(); ++i) {
+    result[count[vec[i]]] = vec[i];
+    count[vec[i]] += 1;
+  }
+
+  return result;
 }
