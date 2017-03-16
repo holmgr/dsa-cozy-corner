@@ -58,3 +58,12 @@ Data structures
 - [] Persistant rope
 - [] Priority Queue (min or max heap)
 - [] Prefix tree
+
+## Implemented algorithms
+This list contains the algorithms implemented so far. 
+
+### Quick sort  
+Sorts a list in place.   
+**File:** Sorting.cpp   
+**Average time complexity:** O(nlogn)   
+**Worst case time complexity:** O(n^2)  
