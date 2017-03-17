@@ -62,8 +62,7 @@ Data structures
 ## Implemented algorithms
 This list contains the algorithms implemented so far. 
 
-### Quick sort  
-Sorts a list in place.   
-**File:** Sorting.cpp   
-**Average time complexity:** O(nlogn)   
-**Worst case time complexity:** O(n^2)  
+|   Algorithm name	| Description | File | Time complexity	| Space complexity  | Notes  |
+|---	|---  |---	|---	|---	|---	|
+|  Quick sort 	| Sorts a list in place | sorting.cpp 	| O(nlogn) (O(n^2) worst case)  	|   ?	|  In place |
+
