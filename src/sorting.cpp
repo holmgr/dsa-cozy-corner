@@ -133,3 +133,22 @@ std::vector<int> counting_sort(std::vector<int>& vec, int k) {
 
   return result;
 }
+
+void bubble_sort(std::vector<int>& vec) {
+  int n = vec.size();
+  bool swapped;
+  // Continue looping until we do not swap any more elements
+  do {
+    swapped = false;
+    // Check every pair of elements to determine if they need to be swapped
+    for (int i = 1; i < n; i++) {
+      if (vec[i - 1] > vec[i]) {
+        swapped = true;
+        // Swap the elements
+        int tmp = vec[i - 1];
+        vec[i - 1] = vec[i];
+        vec[i] = tmp;
+      }
+    }
+  } while (swapped);  // If we did not swap anyting, the list is sorted
+}
