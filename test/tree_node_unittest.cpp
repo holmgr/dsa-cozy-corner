@@ -1,5 +1,5 @@
 #include "tree_node.h"
-#include "gtest\gtest.h"
+#include "gtest/gtest.h"
 
 /*
  This file will include all the test for the TreeNode class.

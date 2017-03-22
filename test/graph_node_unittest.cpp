@@ -1,5 +1,5 @@
 #include "graph_node.h"
-#include "gtest\gtest.h"
+#include "gtest/gtest.h"
 
 
 /*
