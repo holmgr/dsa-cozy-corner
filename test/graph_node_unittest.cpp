@@ -13,8 +13,8 @@ TEST(GraphNodeTest, Add) {
   GraphNode<int> root1;
   GraphNode<int> neighbor1;
   GraphNode<int> neighbor2;
-  root1.addNeighbor(&neighbor1);
-  root1.addNeighbor(&neighbor2);
+  root1.addNeighbor(&neighbor1, 1);
+  root1.addNeighbor(&neighbor2, 1);
 
   EXPECT_EQ(root1.getNeighbors().size(), 2);
 }
@@ -27,8 +27,8 @@ TEST(GraphNodeTest, Remove) {
   GraphNode<int> root1;
   GraphNode<int> neighbor1;
   GraphNode<int> neighbor2;
-  root1.addNeighbor(&neighbor1);
-  root1.addNeighbor(&neighbor2);
+  root1.addNeighbor(&neighbor1, 1);
+  root1.addNeighbor(&neighbor2, 2);
 
   EXPECT_EQ(root1.getNeighbors().size(), 2);
 
@@ -55,4 +55,24 @@ TEST(GraphNodeTest, Value) {
   root1.setValue(1);
 
   EXPECT_EQ(root1.getValue(), 1);
+}
+
+
+/*
+ This test will check if the weighting of links workes.
+*/
+TEST(GraphNodeTest, LinkWeights) {
+	GraphNode<int> root1;
+	GraphNode<int> neighbor1;
+	GraphNode<int> neighbor2;
+	root1.addNeighbor(&neighbor1, 1);
+	root1.addNeighbor(&neighbor2, 2);
+
+	std::vector<NodeLink<int>> neighbors = root1.getNeighbors();
+
+	EXPECT_EQ(neighbors[0].link_weight, 1);
+	EXPECT_EQ(neighbors[0].node, &neighbor1);
+	EXPECT_EQ(neighbors[1].link_weight, 2);
+	EXPECT_EQ(neighbors[1].node, &neighbor2);
+
 }
