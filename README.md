@@ -60,9 +60,9 @@ Data structures
 - [] Prefix tree
 
 ## Implemented algorithms
-This list contains the algorithms implemented so far. 
+This list contains the algorithms implemented so far.
 
 |   Algorithm name	| Description | File | Time complexity	| Space complexity  | Notes  |
 |---	|---  |---	|---	|---	|---	|
-|  Quick sort 	| Sorts a list in place | sorting.cpp 	| O(nlogn) (O(n^2) worst case)  	|   O(n)	|  In place |
-
+|  Quick sort 	| Sorts a list in place | sorting.cpp 	| O(nlogn) (O(n²) worst case)  	|   O(n)	|  In place |
+|  Bubble sort 	| Sorts a list in place. Slow but simple. | sorting.cpp 	| O(n²) 	|   O(1)	|  In place |
