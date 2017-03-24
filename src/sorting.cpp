@@ -134,6 +134,9 @@ std::vector<int> counting_sort(std::vector<int>& vec, int k) {
   return result;
 }
 
+// Sorts the given input using bubble sort.
+// Bubble sort is not very useful, as it is very slow.
+// It is usually only used for teaching purposes.
 void bubble_sort(std::vector<int>& vec) {
   int n = vec.size();
   bool swapped;
