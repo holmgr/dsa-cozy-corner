@@ -7,6 +7,8 @@ void merge_sort(std::vector<int> &vec);
 
 void quick_sort(std::vector<int> &vec, int lo, int hi);
 
+void bubble_sort(std::vector<int> &vec);
+
 int partition(std::vector<int> &vec, int lo, int hi);
 
 std::vector<int> counting_sort(std::vector<int> &vec, int range);
