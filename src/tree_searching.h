@@ -14,14 +14,15 @@
 */
 template<typename V>
 TreeNode<V>* binary_tree_search(TreeNode<V>* start_node, V value) {
+	if (start_node == nullptr) return start_node;
 	TreeNode<V>* current_node = start_node;
 	bool found_node = false;
 	while (!found_node) {
 		// The value was found
-		if (current_node->value == value) {
+		if (current_node->getValue() == value) {
 			found_node = true;
 		}
-		else if (value < current_node->value) {
+		else if (value < current_node->getValue()) {
 			// If the value is smaller then the current node go to the left childe.
 			// If there exist a left child.
 			if (current_node->getChildren().size() > 0) {
@@ -29,7 +30,7 @@ TreeNode<V>* binary_tree_search(TreeNode<V>* start_node, V value) {
 			}
 			else {
 				current_node = nullptr;
-				found_node = false;
+				found_node = true;
 			}
 		}
 		else {
@@ -40,7 +41,7 @@ TreeNode<V>* binary_tree_search(TreeNode<V>* start_node, V value) {
 			}
 			else {
 				current_node = nullptr;
-				found_node = false;
+				found_node = true;
 			}
 		}
 	}
