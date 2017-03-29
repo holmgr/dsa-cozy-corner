@@ -16,6 +16,21 @@ TEST(TreeNodeTest, AddChild) {
   EXPECT_EQ(focusNode.getChildren().size(), 2);
 }
 
+TEST(TreeNodeTest, SetChild) {
+	// Initialize a node with some children.
+	TreeNode<int> focusNode;
+	TreeNode<int> child1;
+
+	focusNode.setChild(&child1, 3);
+	EXPECT_EQ(focusNode.getChildren().size(), 4);
+
+	auto children = focusNode.getChildren();
+	for (int i = 0; i < 3; i++) {
+		EXPECT_EQ(children[i], nullptr);
+	}
+	EXPECT_EQ(children[3], &child1);
+}
+
 TEST(TreeNodeTest, RemoveChild) {
   // Initialize a node with some children then remove them.
   TreeNode<int> focusNode;
