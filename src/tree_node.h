@@ -20,10 +20,12 @@ class TreeNode {
 
   void setParent(TreeNode<V>* node);
   void addChild(TreeNode<V>* node);
-  // This method is updating a node and to set for example the right child of
-  // a binary tree without setting the left child.
-  // This method will fill upp the vector with enough cildren if the index is
-  // larger then the size of the vector.
+  /*
+  This method is updating a node and to set for example the right child of
+  a binary tree without setting the left child.
+  This method will fill upp the vector with enough cildren if the index is
+  larger then the size of the vector.
+  */
   void setChild(TreeNode<V>* node, int index);
 
   // It is expected that the user of this structure will get the parent befor
