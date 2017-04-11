@@ -35,7 +35,7 @@ TEST(TreeSearchTest, NoValue) {
 }
 
 
-// This test will check so that the rootvalue can be found in the givent tree.
+// This test will check so that the root-value can be found in the givent tree.
 TEST(TreeSearchTest, FoundRoot) {
 	TreeNode<int> root_node;
 	TreeNode<int> child1;
