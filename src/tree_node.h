@@ -75,7 +75,7 @@ void TreeNode<V>::setChild(TreeNode<V>* node, int index) {
 		children[index] = node;
 	}
 	else {
-		// I calculate how many empty spaces to add to the list of children.
+		// Calculates how many empty spaces to add to the list of children.
 		int empty_spaces_to_add = index - children.size();
 		for (int i = 0; i < empty_spaces_to_add; i++) {
 			children.push_back(nullptr);
