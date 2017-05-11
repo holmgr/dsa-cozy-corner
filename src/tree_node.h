@@ -20,6 +20,13 @@ class TreeNode {
 
   void setParent(TreeNode<V>* node);
   void addChild(TreeNode<V>* node);
+  /*
+  This method is updating a node and to set for example the right child of
+  a binary tree without setting the left child.
+  This method will fill upp the vector with enough cildren if the index is
+  larger then the size of the vector.
+  */
+  void setChild(TreeNode<V>* node, int index);
 
   // It is expected that the user of this structure will get the parent befor
   // removing it.
@@ -60,6 +67,21 @@ std::vector<TreeNode<V>*> TreeNode<V>::getChildren() {
 template <typename V>
 void TreeNode<V>::addChild(TreeNode<V>* node) {
   children.push_back(node);
+}
+
+template<typename V>
+void TreeNode<V>::setChild(TreeNode<V>* node, int index) {
+	if (index < children.size()) {
+		children[index] = node;
+	}
+	else {
+		// Calculates how many empty spaces to add to the list of children.
+		int empty_spaces_to_add = index - children.size();
+		for (int i = 0; i < empty_spaces_to_add; i++) {
+			children.push_back(nullptr);
+		}
+		children.push_back(node);
+	}
 }
 
 template <typename V>
